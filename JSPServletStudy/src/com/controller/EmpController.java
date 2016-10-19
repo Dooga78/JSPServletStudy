@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.service.EmpInsertService;
 import com.service.EmpListService;
 import com.service.EmpServiceImpl;
 
@@ -36,6 +37,12 @@ public class EmpController extends HttpServlet {
 			service = new EmpListService();
 			service.execute(request, response);
 			nextPage = "/jsp/emp/list.jsp";
+		} else if (com.equals("/emp/insertUI.do")) {
+			nextPage = "/jsp/emp/insertUI.jsp";
+		} else if (com.equals("/emp/insert.do")) {
+			service = new EmpInsertService();
+			service.execute(request, response);
+			nextPage = "/emp/list.do";
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(nextPage);
