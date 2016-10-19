@@ -11,14 +11,17 @@
 <h1>Emp</h1>
 <table>
 	<tr>
-		<td>ID</td>
+		<td>ID</td><td>이 름</td>
 	</tr>
 	<c:forEach items="${ list }" var="eVo">
 	<tr>
 		<td>${ eVo.empId }</td>
+		<td>${ eVo.ename }</td>
 	</tr>
 	</c:forEach>
 </table>
+<a href="insertUI.do">직원 생성</a>
+${ result }
 <%@ include file="/jsp/common/copyright.jsp" %>
 </body>
 </html>
