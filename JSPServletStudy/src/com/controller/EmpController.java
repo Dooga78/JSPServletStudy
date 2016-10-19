@@ -1,4 +1,4 @@
-package com.comtroller;
+package com.controller;
 
 import java.io.IOException;
 
