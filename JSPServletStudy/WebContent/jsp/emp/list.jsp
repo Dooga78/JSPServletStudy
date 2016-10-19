@@ -20,8 +20,8 @@
 	</tr>
 	</c:forEach>
 </table>
-<a href="insertUI.do">직원 생성</a>
-${ result }
+<a href="insertUI.do">직원 생성</a><br>
+<c:if test="${ result eq 0 }">직원 생성 실패했습니다.</c:if>
 <%@ include file="/jsp/common/copyright.jsp" %>
 </body>
 </html>
