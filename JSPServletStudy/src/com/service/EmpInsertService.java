@@ -9,6 +9,7 @@ public class EmpInsertService implements EmpServiceImpl {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		String message = null;
 		String empId = request.getParameter("empId");
 		String ename = request.getParameter("ename");
 		int salary = Integer.parseInt(request.getParameter("salary"));
@@ -17,7 +18,11 @@ public class EmpInsertService implements EmpServiceImpl {
 		
 		int result = eDao.insert(empId, ename, salary);
 		
-		request.setAttribute("result", result);
+		if (result == 0) {
+			message = "직원 생성 실패했습니다.";
+		}
+		
+		request.setAttribute("message", message);
 	}
 
 }
