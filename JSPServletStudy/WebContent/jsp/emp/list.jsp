@@ -19,7 +19,7 @@
 		<td>${ eVo.ename }</td>
 	</tr>
 	</c:forEach>
-</table>테스트
+</table>
 <a href="insertUI.do">직원 생성</a><br>
 <c:if test="${ message ne null }">${ message }</c:if>
 <%@ include file="/jsp/common/copyright.jsp" %>
